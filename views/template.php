@@ -1,12 +1,13 @@
 <html>
 	<head>
 		<title>Crud em MVC</title>
-		<link rel="stylesheet" href="assets/css/template.css" />
-		<link rel="stylesheet" href="assets/css/bootstrap.css"/>
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/template.css" />
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/bootstrap.css"/>
+		<link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/bootstrap.min.css"/>
 	</head>
 	<body>
-		<header>
+		<div class="container">
+		<header class="text-center">
 			<h1> Sistema de Contatos em MVC </h1>
 		</header>	
 
@@ -20,8 +21,8 @@
 			</div>
 		</footer>
 		
-
-	<script src="assets/js/jquery-3.4.1.min.js" type="text/javascript"></script>	
-	<script src="assets/js/bootstrap.js" type="text/javascript"></script>
+	</div>	
+	<script src="<?php echo BASE_URL;?>assets/js/jquery-3.4.1.min.js" type="text/javascript"></script>	
+	<script src="<?php echo BASE_URL;?>assets/js/bootstrap.js" type="text/javascript"></script>
 	</body>
 </html>
