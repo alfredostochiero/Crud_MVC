@@ -32,6 +32,11 @@ class Core {
 			$currentAction = 'index';
 		}
 
+		if(!file_exists('controllers/'.$currentController.'.php')){
+			$currentController = 'erro404Controller';
+			$currentAction = 'index';
+		}
+
 		$c = new $currentController();
 		call_user_func_array(array($c, $currentAction), $params);
 

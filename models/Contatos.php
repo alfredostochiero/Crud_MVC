@@ -49,15 +49,22 @@ class Contatos extends model {
 	}
 
 	public function editarContato($nome, $id){
-		$sql = $this->db->prepare("UPDATE contatos SET nome = :nome WHERE id = :id ");
-		$sql->bindValue(':nome',$nome);
-		$sql->bindValue(':id',$id);
-		$sql->execute();
-		if($sql->rowCount() >0){
-			return true;
-		} else {
-			return false;
-		}
+		if(!empty($nome)){
+			$sql = $this->db->prepare("UPDATE contatos SET nome = :nome WHERE id = :id ");
+			$sql->bindValue(':nome',$nome);
+			$sql->bindValue(':id',$id);
+			$sql->execute();
+			if($sql->rowCount() >0){
+				return true;
+			} else {
+				return false;
+			}
+
+			} else {
+				return false;
+			}
+
+		
 	}
 
 }

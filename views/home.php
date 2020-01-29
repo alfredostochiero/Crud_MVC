@@ -18,7 +18,7 @@
 				<td><?php echo $item['email'] ?> </td>
 				<td>
 					<a href="<?php echo BASE_URL."contatos/editar?id=".$item['id']."&nome=".$item['nome'];?>" class="btn btn-info">    Editar</a> 
-					<a href="<?php echo BASE_URL."contatos/delete?id=".$item['id'];?>" class="btn btn-danger">  Excluir </a>
+					<a href="<?php echo BASE_URL; ?>contatos/delete/<?php echo $item['id']; ?>"class="btn btn-danger">  Excluir </a>
 				</td>
 
 			<tr/>	

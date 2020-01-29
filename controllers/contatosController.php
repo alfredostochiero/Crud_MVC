@@ -15,6 +15,10 @@ class contatosController extends controller {
 		$this->loadTemplate('add',$dados);
 	}
 
+	/*
+	Action que salvar um novo contato no Banco de Dados 
+	*/
+
 	public function add_save (){
 		
 		
@@ -34,14 +38,21 @@ class contatosController extends controller {
 		
 	}
 
-	public function delete(){
-		if(!empty($_GET['id']) && isset($_GET[id])){
-			$id = $_GET['id'];
+	/*
+	Action que deleta um  contato no Banco de Dados 
+	*/
+
+	public function delete($id){
+		
 			$contato = new Contatos();
 			$contato->deletarContato($id);
 			header("location:".BASE_URL);
-		}
+		
 	}
+
+	/*
+	Action que carrega um formulário para editar um  contato no Banco de Dados 
+	*/
 
 	public function editar(){
 		$dados = array();
@@ -51,6 +62,10 @@ class contatosController extends controller {
 		
 	}
 
+	/*
+	Action que edita um contato já existente no Banco de Dados 
+	*/
+
 	public function editarContatos(){
 
 		if(!empty($_POST['nome']) && !empty($_POST['id'])){
@@ -59,9 +74,10 @@ class contatosController extends controller {
 			$id = $_POST['id'];
 			$contato = new Contatos();
 			$contato->editarContato($nome,$id);
-			header("location:".BASE_URL);
+			
 		
 		} 
+		header("location:".BASE_URL);
 
 		
 		
